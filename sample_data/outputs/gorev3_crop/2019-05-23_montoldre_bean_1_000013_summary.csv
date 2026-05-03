@@ -1,0 +1,23 @@
+=== BIRINCIL TESPIT ===,
+Goruntu,2019-05-23_montoldre_bean_1_000013.jpg
+Toplam Fide (Yeni Ekin),6
+Toplam Govde Tespiti,5
+Toplam Tespit,11
+Ort. Confidence,0.639
+Ort. Fide Alani (px2),16534.9
+,
+=== TUR DAGILIMI (Fide) ===,
+Tur,Sayi
+Misir,0
+Fasulye,6
+Pirasa,0
+Bilinmiyor,0
+,
+=== KUME ANALIZI (DBSCAN) ===,
+Kume,Fide Sayisi
+Kume_1,4
+Kume_2,2
+,
+=== SIRA ANALIZI ===,
+Sira,Tespit Sayisi
+Sira_1,11

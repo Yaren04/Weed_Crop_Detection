@@ -1,0 +1,20 @@
+name: crop_detection
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - ultralytics
+    - --extra-index-url https://download.pytorch.org/whl/cu124
+    - torch
+    - torchvision
+    - opencv-python
+    - pillow
+    - matplotlib
+    - seaborn
+    - pandas
+    - scikit-learn
+    - lxml
+    - pyyaml

@@ -1,0 +1,10 @@
+plant_id,type,primary,is_stem,confidence,center_x,center_y,x1,y1,x2,y2,nearest_weed_px,risk
+1,Pirasa,Fide,False,0.928,1013.7,781.8,831.2,507.9,1196.1,1055.7,247.4,LOW
+2,Pirasa,Fide,False,0.907,1556.0,551.1,1347.7,432.3,1764.3,670.0,297.0,LOW
+3,Pirasa,Fide,False,0.798,225.7,517.5,1.9,463.7,449.5,571.3,601.0,LOW
+4,Pirasa,Fide,False,0.794,1847.8,470.8,1647.6,303.6,2048.0,637.9,453.1,LOW
+5,Pirasa,Govde,True,0.769,1663.4,577.9,1628.4,541.6,1698.4,614.1,276.8,LOW
+6,Pirasa,Govde,True,0.741,432.8,551.3,394.2,512.1,471.5,590.5,415.7,LOW
+7,Pirasa,Govde,True,0.739,889.9,601.9,851.8,560.2,927.9,643.5,239.3,LOW
+8,Pirasa,Govde,True,0.732,1357.1,605.4,1322.7,569.2,1391.5,641.5,336.9,LOW
+9,Pirasa,Govde,True,0.729,63.8,605.3,28.4,569.3,99.2,641.4,780.4,LOW

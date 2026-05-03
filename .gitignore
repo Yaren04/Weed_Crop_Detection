@@ -1,0 +1,136 @@
+# ============================================================
+#  Agricultural CV Project — .gitignore
+#  Public repo: kaynak kodlar + sample data KALIR
+#               dataset, ağırlıklar, loglar ATILIR
+# ============================================================
+
+
+# ── 1. VERİ SETLERİ ─────────────────────────────────────────
+# Ham görüntüler ve etiketler (GB'larca veri)
+weed_data/
+data/
+crop_data/
+agri_data/
+
+# YOLO-formatına dönüştürülmüş dataset klasörleri
+weed_yolo_dataset/
+yolo_dataset/
+*_yolo_dataset/
+
+# ZIP arşivleri (Kaggle/Roboflow indirmeleri)
+*.zip
+*.tar.gz
+*.tar
+*.rar
+
+
+# ── 2. MODEL AĞIRLIKLARI ─────────────────────────────────────
+# Pretrained base modeller (zaten ultralytics'ten indiriliyor)
+yolov8n.pt
+yolov8s.pt
+yolov8m.pt
+yolov8l.pt
+yolov8x.pt
+
+# Tüm eğitim çıktısı ağırlıkları (runs/ altındakiler)
+runs/
+
+# Proje kökündeki model klasörleri
+crops_yolo/
+weed_yolo/
+*_yolo/
+
+# Genel .pt kural — sample_data dışında
+*.pt
+
+# ANCAK: sample_data içindeki best.pt'ye izin ver (varsa)
+!sample_data/**/*.pt
+
+
+# ── 3. ANALİZ ÇIKTILARI ──────────────────────────────────────
+# results/ altındaki tüm görseller ve CSV'ler (büyük çıktı kümesi)
+results/
+
+# ANCAK: sample_data klasörü korunur (README için örnek çıktılar)
+!sample_data/
+!sample_data/**
+
+
+# ── 4. PYTHON CACHE ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+
+# ── 5. JUPYTER NOTEBOOK ──────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+
+# ── 6. ORTAM / PAKET YÖNETİCİSİ ─────────────────────────────
+# Conda / venv klasörleri (environment.yml yeterli)
+env/
+venv/
+.venv/
+conda-env/
+*.egg-info/
+dist/
+build/
+
+
+# ── 7. İŞLETİM SİSTEMİ DOSYALARI ────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+
+# ── 8. IDE / EDİTÖR ──────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.spyproject
+.spyderproject
+
+
+# ── 9. LOG / GEÇİCİ DOSYALAR ─────────────────────────────────
+*.log
+*.tmp
+*.temp
+wandb/
+mlruns/
+
+
+# ── 10. HASSAS BİLGİ ─────────────────────────────────────────
+.env
+.env.local
+secrets.yaml
+api_keys.txt
+
+
+# ============================================================
+#  REPODA KALACAKLAR (referans için):
+#
+#  ✅ config.py, weed_config.py
+#  ✅ pipeline.py, weed_pipeline.py
+#  ✅ analyze_field.py, weed_analyze.py
+#  ✅ field_combined_analyze.py, finetune_train.py
+#  ✅ environment.yml, requirements.txt
+#  ✅ README.md
+#  ✅ sample_data/  (2-3 test görseli + çıktıları)
+#  ✅ docs/         (teknik rapor PDF/DOCX)
+# ============================================================

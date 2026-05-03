@@ -1,0 +1,9 @@
+plant_id,type,primary,is_stem,confidence,center_x,center_y,x1,y1,x2,y2,nearest_weed_px,risk
+1,Misir,Fide,False,0.917,615.6,262.4,561.3,200.5,670.0,324.4,103.1,MED
+2,Misir,Fide,False,0.884,275.8,227.7,249.8,118.2,301.9,337.2,51.8,HIGH
+3,Misir,Fide,False,0.814,23.2,265.5,0.3,179.8,46.0,351.2,126.3,MED
+4,Misir,Govde,True,0.761,288.1,259.3,273.6,244.2,302.7,274.5,23.3,HIGH
+5,Misir,Govde,True,0.754,641.3,255.6,628.3,241.6,654.2,269.5,76.6,HIGH
+6,Misir,Fide,False,0.731,983.5,266.2,943.0,193.8,1024.0,338.7,102.7,MED
+7,Misir,Govde,True,0.7,974.5,265.6,955.5,246.2,993.5,285.1,94.8,MED
+8,Misir,Govde,True,0.694,30.4,275.2,15.4,259.5,45.4,290.8,120.3,MED
