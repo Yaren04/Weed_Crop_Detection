@@ -11,9 +11,9 @@ Ciktilar (results/weed/<goruntu_adi>/ altinda):
 
 Kullanim:
     conda activate crop_detection
-    python weed_analyze.py                        # test setinden 5 ornek
-    python weed_analyze.py --image goruntu.jpg    # tek goruntu
-    python weed_analyze.py --folder klasor/       # toplu analiz
+    python weed/analyze.py                        # test setinden 5 ornek
+    python weed/analyze.py --image goruntu.jpg    # tek goruntu
+    python weed/analyze.py --folder klasor/       # toplu analiz
 """
 
 import argparse
@@ -30,7 +30,7 @@ from scipy.ndimage import gaussian_filter
 from sklearn.cluster import DBSCAN
 from ultralytics import YOLO
 
-from weed_config import (
+from weed.config import (
     WEED_CLASS_COLORS,
     WEED_CLASS_NAMES,
     WEED_CONF_THRESHOLD,
@@ -51,14 +51,20 @@ CLUSTER_PALETTE    = [
 # ── Yardimcilar ───────────────────────────────────────────────────────────────
 
 def find_weed_model() -> Path:
-    root = Path(__file__).parent
+    root = Path(__file__).parent.parent
+    # Once weed_yolo/ altinda ara
     for pattern in ("weed_yolo/**/weights/best.pt", "weed_yolo/**/weights/last.pt"):
         c = list(root.glob(pattern))
         if c:
             return max(c, key=lambda p: p.stat().st_mtime)
+    # runs/detect/ altinda ara (YOLO varsayilan kayit yeri)
+    candidates = [p for p in root.rglob("weights/best.pt")
+                  if "weed" in str(p).lower()]
+    if candidates:
+        return max(candidates, key=lambda p: p.stat().st_mtime)
     raise FileNotFoundError(
         "Weed modeli bulunamadi.\n"
-        "Once 'python weed_pipeline.py' ile egitim tamamlayin."
+        "Once 'python weed/pipeline.py' ile egitim tamamlayin."
     )
 
 
@@ -447,7 +453,7 @@ def main():
                   for f in folder.glob(ext)]
         print(f"  {len(images)} goruntu bulundu")
     else:
-        test_dir = Path(__file__).parent / "weed_yolo_dataset" / "images" / "test"
+        test_dir = Path(__file__).parent.parent / "weed_yolo_dataset" / "images" / "test"
         images   = list(test_dir.glob("*.jpg"))[:5]
         print(f"  Test setinden {len(images)} goruntu (--image veya --folder ile degistir)")
 

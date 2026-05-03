@@ -32,7 +32,7 @@ import torch
 import yaml
 from ultralytics import YOLO
 
-from config import (
+from crop.config import (
     BATCH_SIZE,
     BASE_MODEL,
     BEST_WEIGHTS,

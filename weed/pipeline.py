@@ -10,8 +10,8 @@ Adimlar:
 
 Kullanim:
     conda activate crop_detection
-    python weed_pipeline.py
-    python weed_pipeline.py --skip-extract   # zip zaten cikartildiysa
+    python weed/pipeline.py
+    python weed/pipeline.py --skip-extract   # zip zaten cikartildiysa
 """
 
 import argparse
@@ -25,7 +25,7 @@ import torch
 import yaml
 from ultralytics import YOLO
 
-from weed_config import (
+from weed.config import (
     AGRI_DATA_DIR,
     WEED_ANNOT_DIR,
     WEED_BASE_MODEL,
@@ -341,7 +341,7 @@ def train_weed_model():
     print(f"\n  Egitim tamamlandi!")
     print(f"  En iyi model: {best}")
     print(f"\n  Analiz icin:")
-    print(f"  python weed_analyze.py --image <goruntu.jpg>")
+    print(f"  python weed/analyze.py --image <goruntu.jpg>")
     return best
 
 

@@ -10,7 +10,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
-from config import (
+from crop.config import (
     CLASS_NAMES,
     DATA_DIR,
     DATASET_DIR,

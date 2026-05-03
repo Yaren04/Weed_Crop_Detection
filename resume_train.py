@@ -10,7 +10,7 @@ Kullanim:
 from pathlib import Path
 import torch
 from ultralytics import YOLO
-from config import (
+from crop.config import (
     EPOCHS, IMG_SIZE, BATCH_SIZE, PATIENCE,
     PROJECT_NAME, CONF_THRESHOLD, YOLO_DATASET
 )
@@ -56,7 +56,7 @@ def main():
     print(f"\n  Tamamlandi!")
     print(f"  En iyi model: {best}")
     print(f"\n  Simdi analiz icin:")
-    print(f"  python analyze_field.py --image <goruntu.jpg>")
+    print(f"  python crop/analyze.py --image <goruntu.jpg>")
 
 if __name__ == "__main__":
     main()

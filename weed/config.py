@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # ── Proje Koku ───────────────────────────────────────────────────────────────
-ROOT = Path(__file__).parent.resolve()
+ROOT = Path(__file__).parent.parent.resolve()
 
 # ── Ham Veri ─────────────────────────────────────────────────────────────────
 WEED_ZIP_PATH   = Path.home() / "Desktop" / "archive.zip"

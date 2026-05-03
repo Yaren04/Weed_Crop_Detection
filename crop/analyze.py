@@ -9,9 +9,9 @@ Oncelik:
 Kullanim:
     conda activate crop_detection
 
-    python analyze_field.py                         # test setinden 5 ornek
-    python analyze_field.py --image goruntu.jpg     # tek goruntu
-    python analyze_field.py --folder klasor/        # klasordeki tum gorseller
+    python crop/analyze.py                         # test setinden 5 ornek
+    python crop/analyze.py --image goruntu.jpg     # tek goruntu
+    python crop/analyze.py --folder klasor/        # klasordeki tum gorseller
 
 Ciktilar  →  results/field_analysis/<goruntu_adi>/
     _detection.jpg   : Fide kutulari (kirmizi=fide, gri=govde) + ID
@@ -34,7 +34,7 @@ import pandas as pd
 from sklearn.cluster import DBSCAN
 from ultralytics import YOLO
 
-from config import (
+from crop.config import (
     CLASS_HIERARCHY,
     CLASS_NAMES,
     CONF_THRESHOLD,
@@ -96,7 +96,7 @@ def adaptive_eps(df: pd.DataFrame, img_w: int, img_h: int) -> tuple[float, float
 
 
 def find_best_model() -> Path:
-    root = Path(__file__).parent
+    root = Path(__file__).parent.parent
     for pattern in ("weights/best.pt", "weights/last.pt"):
         c = list(root.rglob(pattern))
         if c:
@@ -496,7 +496,7 @@ def main():
                   for f in folder.glob(ext)]
         print(f"  {len(images)} goruntu bulundu")
     else:
-        test_dir = Path(__file__).parent / "yolo_dataset" / "images" / "test"
+        test_dir = Path(__file__).parent.parent / "yolo_dataset" / "images" / "test"
         images   = list(test_dir.glob("*.jpg"))[:5]
         print(f"  Test setinden {len(images)} goruntu (--image veya --folder ile degistir)")
 

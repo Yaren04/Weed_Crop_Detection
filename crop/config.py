@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # ── Proje Kökü ──────────────────────────────────────────────────────────────
-ROOT = Path(__file__).parent.resolve()
+ROOT = Path(__file__).parent.parent.resolve()
 
 # ── Ham Veri (zip + cikartilmis klasor) ─────────────────────────────────────
 ZIP_PATH     = Path.home() / "Desktop" / "DB.zip"   # indirilen zip

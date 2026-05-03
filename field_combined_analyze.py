@@ -26,13 +26,13 @@ import numpy as np
 import pandas as pd
 from ultralytics import YOLO
 
-from config import (
+from crop.config import (
     CLASS_HIERARCHY,
     CLASS_NAMES,
     CONF_THRESHOLD,
     TYPE_COLORS,
 )
-from weed_config import WEED_CONF_THRESHOLD
+from weed.config import WEED_CONF_THRESHOLD
 
 # ── Sabitler ──────────────────────────────────────────────────────────────────
 ROOT             = Path(__file__).parent.resolve()

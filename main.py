@@ -10,7 +10,8 @@ import argparse
 import sys
 from pathlib import Path
 
-import pipeline
+from crop import pipeline
+from crop.config import CLASS_NAMES as _CLASS_NAMES
 
 
 def find_best_weights():
@@ -55,7 +56,7 @@ def main():
 
     print("\n" + "=" * 60)
     print("  VEGETABLE CROPS ERKEN BUYUME — PIPELINE BASLIYOR")
-    print(f"  Siniflar: {', '.join(__import__('config').CLASS_NAMES)}")
+    print(f"  Siniflar: {', '.join(_CLASS_NAMES)}")
     print("=" * 60)
 
     # 0. ZIP cikart

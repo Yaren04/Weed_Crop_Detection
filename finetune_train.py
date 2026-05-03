@@ -15,7 +15,7 @@ Kullanim:
 from pathlib import Path
 import torch
 from ultralytics import YOLO
-from config import IMG_SIZE, BATCH_SIZE, YOLO_DATASET, CONF_THRESHOLD
+from crop.config import IMG_SIZE, BATCH_SIZE, YOLO_DATASET, CONF_THRESHOLD
 
 
 def find_best_weights() -> Path:
@@ -79,7 +79,7 @@ def main():
     print(f"  Fine-tune tamamlandi!")
     print(f"  En iyi model: {best}")
     print(f"\n  Simdi analiz:")
-    print(f"  python analyze_field.py --image <goruntu.jpg>")
+    print(f"  python crop/analyze.py --image <goruntu.jpg>")
     print(f"{'='*60}")
 
 
